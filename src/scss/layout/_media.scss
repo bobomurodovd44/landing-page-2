@@ -1,0 +1,13 @@
+.media {
+    width: 100%;
+    margin: $spacing-xxl auto;
+    overflow: hidden;
+
+    @include mobile {
+        margin: $spacing-xxl auto 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}

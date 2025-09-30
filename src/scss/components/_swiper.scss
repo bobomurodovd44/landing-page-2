@@ -1,0 +1,39 @@
+.swiper {
+    width: 100%;
+    padding: 0 $spacing-xl;
+}
+
+.swiper-slide {
+    border-radius: $border-radius-md;
+    padding: $spacing-lg;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        border-radius: $border-radius-md;
+    }
+}
+
+.next-prev {
+    width: 100%;
+    height: 4rem;
+    @include flex-center;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    padding-right: $spacing-xl;
+
+    button {
+        color: $text-light;
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.swiper1-left.is-disabled,
+.swiper1-right.is-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
