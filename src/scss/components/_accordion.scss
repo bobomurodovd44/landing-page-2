@@ -1,0 +1,49 @@
+.accordion-group {
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+
+    .accordion {
+        width: 100%;
+        overflow: hidden;
+
+        .accordion-trigger {
+            font-size: $font-size-xl;
+            color: $text-light;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 200;
+            width: 100%;
+            padding: 2rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: white;
+            transition: background-color 0.3s linear;
+
+            i {
+                transform: rotate(0deg); // default pastga
+                padding: 0 0 0 1rem;
+                transition: transform 0.3s ease; // rotate animatsiyasi
+            }
+
+            i.rotated {
+                transform: rotateX(180deg);
+            }
+        }
+
+        .accordion-content {
+            width: 100%;
+            overflow: hidden;
+            max-height: 0;
+            padding: 0 1rem;
+            @include body-text;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+
+            &.open {
+                max-height: 1000px;
+                padding: 1rem;
+            }
+        }
+    }
+}

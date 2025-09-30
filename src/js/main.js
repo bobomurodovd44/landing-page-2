@@ -1,4 +1,3 @@
-// Navbar scroll behavior
 let lastScroll = 0;
 const navbar = document.getElementById("navbar");
 
@@ -6,34 +5,29 @@ window.addEventListener("scroll", () => {
     let currentScroll = window.pageYOffset;
 
     if (currentScroll > lastScroll) {
-        // Scrolling down
         navbar.classList.add("hide");
     } else {
-        // Scrolling up
         navbar.classList.remove("hide");
     }
 
     lastScroll = currentScroll;
 });
 
-// Mobile menu functionality
 const navActions = document.querySelector('.nav-actions');
 const openBtn = document.getElementById('open');
 const closeBtn = document.getElementById('close');
 
 openBtn.addEventListener('click', () => {
     navActions.classList.add('open');
-    document.body.classList.add('no-scroll'); // Block scrolling
+    document.body.classList.add('no-scroll');
 });
 
 closeBtn.addEventListener('click', () => {
     navActions.classList.remove('open');
-    document.body.classList.remove('no-scroll'); // Restore scrolling
+    document.body.classList.remove('no-scroll');
 });
 
-// Initialize Swiper when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Wait for Swiper library to load
     if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper(".mySwiper", {
             autoHeight: true,
@@ -55,18 +49,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             navigation: {
-                nextEl: ".swiper1-right", // Right button
-                prevEl: ".swiper1-left",  // Left button
-                disabledClass: "is-disabled", // Swiper adds this class
+                nextEl: ".swiper1-right",
+                prevEl: ".swiper1-left",
+                disabledClass: "is-disabled",
             },
         });
     }
 });
 
-// Initialize AOS when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Wait for AOS library to load
+
     if (typeof AOS !== 'undefined') {
         AOS.init();
     }
+});
+
+
+const triggers = document.querySelectorAll('.accordion-trigger');
+
+triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const icon = trigger.querySelector('i');
+
+        content.classList.toggle('open');
+        icon.classList.toggle('rotated');
+    });
 });
