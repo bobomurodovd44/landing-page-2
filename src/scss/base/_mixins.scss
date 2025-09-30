@@ -1,0 +1,96 @@
+// Mixins for responsive design
+@mixin mobile {
+    @media screen and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-large - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin large-desktop {
+    @media screen and (min-width: #{$breakpoint-large}) {
+        @content;
+    }
+}
+
+// Button mixins
+@mixin button-base {
+    font-size: $font-size-base;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: $border-radius-lg;
+    transition: $transition-fast;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+@mixin button-primary {
+    @include button-base;
+    color: $secondary-color;
+    background-color: $primary-color;
+    padding: $spacing-md $spacing-xl;
+    
+    &:hover {
+        transform: scale(0.95);
+    }
+}
+
+@mixin button-outline {
+    @include button-base;
+    color: $primary-color;
+    background-color: $background-color;
+    border: 2px solid $primary-color;
+    padding: $spacing-md $spacing-xl;
+    
+    &:hover {
+        transform: scale(0.95);
+    }
+}
+
+@mixin button-outline-sm {
+    @include button-base;
+    color: $primary-color;
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    padding: 4px 10px;
+    font-size: $font-size-base;
+    font-weight: 500;
+}
+
+// Flexbox mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Text mixins
+@mixin heading-text {
+    font-family: $font-family-heading;
+    color: $primary-color;
+    font-weight: 400;
+}
+
+@mixin body-text {
+    color: $text-color;
+    font-weight: 450;
+    line-height: 1.6rem;
+}

@@ -1,0 +1,73 @@
+.section {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    @include flex-center;
+    padding: $spacing-xl;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 50%;
+
+        @include mobile {
+            width: 100%;
+            @include flex-center;
+
+            img {
+                max-width: 420px;
+            }
+        }
+    }
+
+    .right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: $spacing-lg;
+        margin-top: auto;
+        padding: $spacing-md;
+
+        @include mobile {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+
+            .text {
+                font-size: $font-size-lg;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+.heading {
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    font-weight: 500;
+    color: $primary-color;
+    @include heading-text;
+    line-height: 1.9rem;
+}
+
+.text {
+    font-size: $font-size-xl;
+    color: $text-light;
+    font-weight: 400;
+    max-width: 750px;
+    line-height: 1.7rem;
+}
+
+.swiper-header {
+    font-size: clamp(2.625rem, 9.22vw, 3.5rem);
+    font-weight: 400;
+    color: $primary-color;
+    @include heading-text;
+    text-align: left;
+    margin: $spacing-xl auto;
+    text-align: center;
+    max-width: $breakpoint-xl;
+}

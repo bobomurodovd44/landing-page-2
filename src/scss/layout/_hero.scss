@@ -1,0 +1,28 @@
+.hero {
+    padding: $spacing-xxl $spacing-xl 0;
+    margin-bottom: $spacing-xl;
+}
+
+.hero-header {
+    font-size: clamp(2.625rem, 9.22vw, 3.5rem);
+    font-weight: 400;
+    color: $primary-color;
+    text-align: center;
+    @include heading-text;
+    margin-bottom: $spacing-xl;
+}
+
+.hero-text {
+    font-size: $font-size-lg;
+    @include body-text;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-button-container {
+    margin: $spacing-xl auto;
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+}

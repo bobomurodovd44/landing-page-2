@@ -1,0 +1,12 @@
+.button-lg {
+    @include button-primary;
+}
+
+.button-lg-outline {
+    @include button-outline;
+    width: fit-content;
+}
+
+.button-md-outline {
+    @include button-outline-sm;
+}
