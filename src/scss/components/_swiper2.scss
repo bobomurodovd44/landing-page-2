@@ -1,0 +1,20 @@
+.swiper {
+    width: 100%;
+    padding: 0 $spacing-xl !important;
+}
+
+.mySwiper2 {
+    .swiper-slide {
+        margin-top: auto;
+        background-color: rgb(228, 227, 227);
+    }
+
+    .text {
+        line-height: 3rem;
+    }
+
+    img {
+        width: 102px;
+        height: 18px;
+    }
+}
